@@ -1,15 +1,16 @@
 <?php
 
 class Filme{
-    public string $titulo;
-    public string $genero;
-    private int $anoLancamento;
-    public array $notas = [];
-    public float $media;
+    public array $notas;
+    private string $teste;
 
-
-    public function defineAnoLancamento(int $ano): void {
-        $this->anoLancamento = $ano;
+    public function __construct(
+        public readonly string $titulo,
+        public readonly int $anoLancamento,
+        public readonly Genero $genero
+    )
+    {
+        $this->notas = [];
     }
 
     public function avalia(float $nota): void{
