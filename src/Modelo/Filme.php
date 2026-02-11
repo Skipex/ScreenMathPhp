@@ -16,4 +16,9 @@ class Filme extends Titulo
             genero: $genero
         );
     }
+
+    public function duracaoEmMinutos(): int
+    {
+        return $this->duracaoEmMinutos;
+    }
 }

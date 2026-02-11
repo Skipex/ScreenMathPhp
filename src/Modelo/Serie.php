@@ -7,6 +7,8 @@ class Serie extends Titulo
         int $anoLancamento,
         Genero $genero,
         public readonly int $numeroTemporadas,
+        public readonly int $episodiosPorTemporada,
+        public readonly int $minutosPorEpisodio,
     )
     {
         parent::__construct(
@@ -15,5 +17,10 @@ class Serie extends Titulo
             genero: $genero,
         );
         
+    }
+
+    public function duracaoEmMinutos(): int
+    {
+        return $this->numeroTemporadas * $this->episodiosPorTemporada * $this->minutosPorEpisodio;
     }
 }
