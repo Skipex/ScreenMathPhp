@@ -1,6 +1,7 @@
 <?php
 
-abstract class Titulo{
+abstract class Titulo implements Avaliavel
+{
     public array $notas;
 
     public function __construct(
@@ -10,10 +11,6 @@ abstract class Titulo{
     )
     {
         $this->notas = [];
-    }
-
-    public function avalia(float $nota): void{
-        $this->notas[] = $nota;
     }
 
     public function media(): float{

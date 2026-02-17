@@ -1,9 +1,12 @@
 <?php
 
 require __DIR__ . "/src/Modelo/Genero.php";
+require __DIR__ . "/src/Modelo/Avaliavel.php";
 require __DIR__ . "/src/Modelo/Titulo.php";
+require __DIR__ . "/src/Modelo/Episodio.php";
 require __DIR__ . "/src/Modelo/Filme.php";
 require __DIR__ . "/src/Modelo/Serie.php";
+require __DIR__ . "/src/Calculadora/ConversorNotaEstrela.php";
 require __DIR__ . "/src/Calculadora/CalculadoraMaratona.php";
 
 echo "Bem-vindo(a) ao ScreenMatch\n";
@@ -33,6 +36,12 @@ $serie = new Serie(
     minutosPorEpisodio: 25
 );
 
+$episodio = new Episodio(
+    serie: $serie,
+    nome: "Episódio Piloto",
+    numero: 1
+);
+
 $serie->avalia(10);
 $serie->avalia(8);
 
@@ -45,4 +54,6 @@ $calculadora->inclui($serie);
 
 echo "Para maratonar seus favoritos, você vai precisar de {$calculadora->duracaoTotal()} minutos assistindo! \n";
 
-
+$conversor = new ConversorNotaEstrela();
+echo "A nota do filme é: {$conversor->converte($filme)} estrelas\n";
+echo "A nota da série é: {$conversor->converte($serie)} estrelas\n";
