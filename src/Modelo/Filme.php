@@ -1,5 +1,7 @@
 <?php
 
+namespace Screenmatch\Modelo;
+
 class Filme extends Titulo
 {
 
@@ -21,17 +23,5 @@ class Filme extends Titulo
     public function duracaoEmMinutos(): int
     {
         return $this->duracaoEmMinutos;
-    }
-
-     public function avalia(float $nota): void 
-    {
-        $this->notas[] = $nota;
-    }
-
-    public function media(): float {
-        $somaNotas = array_sum($this->notas);
-        $quantidadeNotas = count($this->notas);
-    
-        return $somaNotas / $quantidadeNotas;
     }
 }

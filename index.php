@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__ . "/src/Modelo/ComAvaliacao.php";
 require __DIR__ . "/src/Modelo/Genero.php";
 require __DIR__ . "/src/Modelo/Avaliavel.php";
 require __DIR__ . "/src/Modelo/Titulo.php";
@@ -8,6 +9,20 @@ require __DIR__ . "/src/Modelo/Filme.php";
 require __DIR__ . "/src/Modelo/Serie.php";
 require __DIR__ . "/src/Calculadora/ConversorNotaEstrela.php";
 require __DIR__ . "/src/Calculadora/CalculadoraMaratona.php";
+
+use Screenmatch\Modelo\{
+    Filme,
+    Serie,
+    Episodio,
+    Genero
+};
+
+use Screenmatch\Calculadora\{
+    CalculadoraMaratona,
+    ConversorNotaEstrela
+};
+
+
 
 echo "Bem-vindo(a) ao ScreenMatch\n";
 
